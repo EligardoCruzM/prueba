@@ -7,9 +7,32 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   </head>
 
   <body>
+    <nav class="navbar navbar-ligth" style="background-color: #e3f2fd;">
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <a class="nav-link" href="../../">Principal</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../../clientes">Clientes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../../productos">Productos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../../ordens">Ordenes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../../detalle_ordens">Detalle Ordenes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../../saludo">Saludo</a>
+        </li>
+      </ul>
+    </nav>
     <%= yield %>
   </body>
 </html>

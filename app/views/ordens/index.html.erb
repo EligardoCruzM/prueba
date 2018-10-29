@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Ordenes</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Cliente</th>
+      <th scope="col">Numero orden</th>
+      <th scope="col">Fecha</th>
+      <th scope="col" colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ordens.each do |orden| %>
+      <tr>
+        <th scope="row"><%= orden.id %></td>
+        <td><%= orden.cliente.nombre_cliente %></td>
+        <td><%= orden.numero_orden %></td>
+        <td><%= orden.fecha %></td>
+        <td><%= link_to 'Mostrar', orden %></td>
+        <td><%= link_to 'Editar', edit_orden_path(orden) %></td>
+        <td><%= link_to 'Eliminar', orden, method: :delete, data: { confirm: '¿Seguro que desea eliminar?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Añadir Orden', new_orden_path %>

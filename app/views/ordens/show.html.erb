@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cliente:</strong>
+  <%= @orden.cliente.nombre_cliente %>
+</p>
+
+<p>
+  <strong>Numero orden:</strong>
+  <%= @orden.numero_orden %>
+</p>
+
+<p>
+  <strong>Fecha:</strong>
+  <%= @orden.fecha %>
+</p>
+
+<%= link_to 'Editar', edit_orden_path(@orden) %> |
+<%= link_to 'Regresar', ordens_path %>

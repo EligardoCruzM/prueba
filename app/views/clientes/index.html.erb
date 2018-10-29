@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Clientes</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">RFC</th>
+      <th scope="col">Nombre cliente</th>
+      <th scope="col" colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @clientes.each do |cliente| %>
+      <tr>
+        <th scope="row"><%= cliente.id %></td>
+        <td><%= cliente.rfc %></td>
+        <td><%= cliente.nombre_cliente %></td>
+        <td><%= link_to 'Mostrar', cliente %></td>
+        <td><%= link_to 'Editar', edit_cliente_path(cliente) %></td>
+        <td><%= link_to 'Eliminar', cliente, method: :delete, data: { confirm: '¿Seguro que desea eliminar?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Añadir Cliente', new_cliente_path %>

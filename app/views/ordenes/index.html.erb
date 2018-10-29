@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Ordenes</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Numero orden</th>
+      <th scope="col">Fecha</th>
+      <th scope="col" colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ordenes.each do |ordene| %>
+      <tr>
+        <td scope="row"><%= ordene.id %></td>
+        <td><%= ordene.clientes %></td>
+        <td><%= ordene.numero_orden %></td>
+        <td><%= ordene.fecha %></td>
+        <td><%= link_to 'Show', ordene %></td>
+        <td><%= link_to 'Edit', edit_ordene_path(ordene) %></td>
+        <td><%= link_to 'Destroy', ordene, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ordene', new_ordene_path %>

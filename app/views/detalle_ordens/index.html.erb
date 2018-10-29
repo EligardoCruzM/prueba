@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Detalle Ordenes</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Producto</th>
+      <th scope="col">Cantidad</th>
+      <th scope="col">Precio venta</th>
+      <th scope="col" colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @detalle_ordens.each do |detalle_orden| %>
+      <tr>
+        <th scope="row"><%= detalle_orden.id %></td>
+        <td><%= detalle_orden.producto.nombre_producto %></td>
+        <td><%= detalle_orden.cantidad %></td>
+        <td>$<%= detalle_orden.precio_venta %></td>
+        <td><%= link_to 'Mostrar', detalle_orden %></td>
+        <td><%= link_to 'Editar', edit_detalle_orden_path(detalle_orden) %></td>
+        <td><%= link_to 'Eliminar', detalle_orden, method: :delete, data: { confirm: '¿Seguro que desea eliminar?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Añadir Detalle Orden', new_detalle_orden_path %>
